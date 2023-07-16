@@ -1,0 +1,46 @@
+@import './base/base';
+@import './base/variables';
+
+@import './blocks/sketch-button';
+@import './blocks/game';
+@import './blocks/next';
+@import './blocks/score';
+
+.bottom {
+	margin-bottom: 0;
+}
+
+.left {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.right {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+canvas,
+.game__next,
+.game__score {
+	animation: pulsate 1.5s infinite alternate;
+	border: 1px solid var(--white);
+	border-radius: 5px;
+	padding: 0.4em;
+	box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe,
+		0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+
+@keyframes pulsate {
+	100% {
+		text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe, 0 0 80px #bc13fe,
+			0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+	}
+
+	0% {
+		text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe,
+			0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+	}
+}

@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../img/bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Montserrat, sans-serif;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+}
+
+span > img {
+  width: 30px;
+  height: 30px;
+}
+
+:root {
+  --white: #fff;
+  --bg-muted: rgba(0, 0, 0, 0.7);
+}
+
+.sketch-btn {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 11px;
+  padding: 12px 20px;
+  position: relative;
+  line-height: 24px;
+  color: var(--white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 4px 16px rgba(0, 0, 0, 0.02), 0 4px 24px rgba(0, 0, 0, 0.02);
+  background-color: var(--bg-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sketch-btn:not(:last-child) {
+  margin-bottom: 15px;
+}
+.sketch-btn.start svg {
+  animation: stroke 1s linear;
+}
+.sketch-btn .lines {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+  z-index: 1;
+}
+.sketch-btn .lines > div {
+  position: absolute;
+  inset: 0;
+}
+.sketch-btn .lines > div:last-child {
+  transform: rotate(180deg);
+}
+.sketch-btn .lines > div svg {
+  display: block;
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  fill: none;
+  stroke-width: 2;
+  stroke: #c9e9ff;
+  width: 100%;
+  height: 100%;
+  stroke-dasharray: 2 10;
+  stroke-dashoffset: 14;
+  opacity: 0;
+}
+.sketch-btn .lines > div svg:nth-child(1) {
+  stroke: #f8fcff;
+}
+.sketch-btn .lines > div svg:nth-child(2) {
+  stroke-width: 6px;
+  filter: blur(20px);
+}
+.sketch-btn .lines > div svg:nth-child(3) {
+  stroke-width: 5px;
+  filter: blur(6px);
+}
+.sketch-btn .lines > div svg:nth-child(4) {
+  stroke-width: 10px;
+  filter: blur(56px);
+}
+
+@keyframes stroke {
+  30%, 55% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 4;
+    opacity: 0;
+  }
+}
+.game__wrapper {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+.game__buttons {
+  display: flex;
+  flex-direction: row;
+}
+.game__buttons button:not(:last-child) {
+  margin-right: 15px;
+}
+.game__title {
+  margin-bottom: 20px;
+  font-size: 40px;
+  text-align: center;
+  color: var(--white);
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+}
+.game__canvas {
+  background-color: var(--bg-muted);
+  margin-right: 15px;
+  width: 320px;
+}
+.game__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.game__next {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 150px;
+  height: 180px;
+  margin-bottom: 15px;
+  background-color: var(--bg-muted);
+}
+.game__score {
+  background-color: var(--bg-muted);
+  height: 100px;
+  padding-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: var(--white);
+}
+.game__score span {
+  display: block;
+}
+.game__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  padding: 15px;
+  border: 1px solid var(--white);
+  background-color: var(--bg-muted);
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+.game__menu span {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: var(--white);
+}
+.game__menu button {
+  border: 1px solid var(--white);
+}
+
+.next__title {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 55px;
+  width: 100%;
+  color: var(--white);
+}
+.next__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.score__title {
+  margin-bottom: 10px;
+}
+.score__total {
+  font-size: 22px;
+}
+
+.bottom {
+  margin-bottom: 0;
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+canvas,
+.game__next,
+.game__score {
+  animation: pulsate 1.5s infinite alternate;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  padding: 0.4em;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe, 0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+  }
+  0% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+}/*# sourceMappingURL=styles.css.map */

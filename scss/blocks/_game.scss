@@ -1,0 +1,110 @@
+.game {
+	&__wrapper {
+		display: flex;
+		align-items: flex-start;
+
+		height: 100%;
+		width: 100%;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: row;
+
+		button {
+			&:not(:last-child) {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+
+		font-size: 40px;
+		text-align: center;
+
+		color: var(--white);
+		text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe,
+			0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+	}
+
+	&__canvas {
+		background-color: var(--bg-muted);
+
+		margin-right: 15px;
+
+		width: 320px;
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		position: relative;
+	}
+
+	&__next {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+
+		position: relative;
+		width: 150px;
+		height: 180px;
+
+		margin-bottom: 15px;
+
+		background-color: var(--bg-muted);
+	}
+
+	&__score {
+		background-color: var(--bg-muted);
+
+		height: 100px;
+		padding-top: 10px;
+
+		margin-bottom: 15px;
+
+		text-align: center;
+
+		color: var(--white);
+
+		span {
+			display: block;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		width: 300px;
+		height: 400px;
+
+		padding: 15px;
+
+		border: 1px solid var(--white);
+
+		background-color: var(--bg-muted);
+
+		box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe,
+			0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+
+		span {
+			margin-bottom: 20px;
+
+			font-size: 22px;
+
+			color: var(--white);
+		}
+
+		button {
+			border: 1px solid var(--white);
+		}
+	}
+}
