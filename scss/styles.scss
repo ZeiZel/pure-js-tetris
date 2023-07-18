@@ -5,6 +5,7 @@
 @import './blocks/game';
 @import './blocks/next';
 @import './blocks/score';
+@import './blocks/tetromino';
 
 .bottom {
 	margin-bottom: 0;
@@ -12,13 +13,13 @@
 
 .left {
 	position: absolute;
-	top: 0;
+	top: 28px;
 	left: 0;
 }
 
 .right {
 	position: absolute;
-	top: 0;
+	top: 28px;
 	right: 0;
 }
 

@@ -12,6 +12,8 @@
 		flex-direction: row;
 
 		button {
+			border: 1px solid var(--white);
+
 			&:not(:last-child) {
 				margin-right: 15px;
 			}
@@ -44,6 +46,10 @@
 		flex-direction: column;
 
 		position: relative;
+
+		button {
+			border: 1px solid var(--white);
+		}
 	}
 
 	&__next {
